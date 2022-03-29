@@ -22,6 +22,16 @@ int x_index = 0;
 double buffer_values_y[buffer_size];
 int y_index = 0;
 
+//Buffer system--------------------------------------------
+double mean(double* vector){
+  double temp = 0.0;
+  for (int i = 0; i < sizeof(vector); i++)
+  {
+    temp += vector[i];
+  }
+  return temp/sizeof(vector);
+}
+
 double scale_x(int sensor_input){
   return ((sensor_input-min_sensor_value_x)*active_area_x/(max_sensor_value_x-min_sensor_value_x));
   }
@@ -78,6 +88,8 @@ double read_Y(int reads = 1){
   return mean(buffer_values_y);
   }
 
+//--------------------------------------------
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -99,15 +111,6 @@ void loop() {
   Serial.print(", ");
   Serial.println(y);
   delay(3);
-}
-
-double mean(double* vector){
-  double temp = 0.0;
-  for (int i = 0; i < sizeof(vector); i++)
-  {
-    temp += vector[i];
-  }
-  return temp/sizeof(vector);
 }
 
 
