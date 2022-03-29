@@ -1,7 +1,0 @@
-{
-    "board": "arduino:avr:uno",
-    "port": "/dev/tty.usbmodem14201",
-    "programmer": "arduino:avrispmkii",
-    "output": "../ArduinoOutput",
-    "sketch": "sketch_mar29a/sketch_mar29a.ino"
-}
